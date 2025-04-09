@@ -1,0 +1,247 @@
+/* ----------- GLOBAL ----------- */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    scroll-behavior: smooth;
+}
+
+/* ----------- ANIMATIONS ----------- */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide {
+    animation: slideIn 1s ease forwards;
+}
+
+/* ----------- NAVBAR ----------- */
+.navbar {
+    background-color: #900C3F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a,
+.nav-links span {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links span:hover {
+    background-color: #7d0b37;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #900C3F;
+    min-width: 200px;
+    top: 120%;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #7d0b37;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ----------- MENU MOBILE ----------- */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #900C3F;
+        padding: 1rem;
+    }
+
+    #menu-toggle:checked+.menu-icon+.nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* ----------- CONTENU ----------- */
+.main-content {
+    max-width: 1100px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease;
+}
+
+/* ----------- BOUTONS ----------- */
+a.button {
+    display: inline-block;
+    background-color: #900C3F;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #7d0b37;
+    transform: scale(1.05);
+}
+
+/* ----------- HEADER IMAGE ----------- */
+.header-full {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header-image {
+    background-image: url('../images/bureau.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.2s ease;
+}
+
+.header-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.header-image h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease forwards;
+}
+
+.header-image p {
+    font-size: 1.4rem;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+/* ----------- FOOTER ----------- */
+.footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    border-top: 4px solid #900C3F;
+}
+
+.footer a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
