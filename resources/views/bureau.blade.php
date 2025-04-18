@@ -65,7 +65,7 @@
             </div>
 
             <div style="text-align: center; width: 200px;">
-                <img src="{{ asset('images/membres/cheick.jpg') }}" alt="Cheick BOUGOUM" style="width: 100%; border-radius: 8px;">
+                <img src="{{ asset('images/membres/bougoum.jpg') }}" alt="Cheick BOUGOUM" style="width: 100%; border-radius: 8px;">
                 <h3 style="margin: 0.5rem 0;">Cheick BOUGOUM</h3>
                 <p style="color: #555;">Responsable Adjoint Sport</p>
             </div>

@@ -20,10 +20,10 @@
         
 
         <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <label for="menu-toggle" class="menu-icon">&#9776;</label> 
 
         <nav class="nav-links">
-            <a href="{{ url('/') }}">Accueil</a>
+            <a href="{{ url('/') }}">Accueil</a> 
             <div class="dropdown">
                 <span>L’Amicale ▼</span>
                 <div class="dropdown-content">

@@ -1,36 +1,46 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('accueil');
-});
-
-
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ActivityController as AdminActivityController;
+
+// ----------------------
+// 🌐 PARTIE PUBLIQUE
+// ----------------------
 
 Route::get('/', function () {
     return view('accueil');
 });
 
-Route::get('/a-propos', function () {
-    return view('a_propos'); // à créer dans resources/views
-});
+Route::get('/a-propos', fn() => view('a_propos'));
+Route::get('/anciens', fn() => view('anciens'));
+Route::get('/vie-a-dakar', fn() => view('vie_dakar'));
+Route::get('/contact', fn() => view('contact'));
+Route::get('/bureau', fn() => view('bureau'));
+Route::get('/page', fn() => view('page'));
 
-Route::get('/anciens', function () {
-    return view('anciens'); // à créer
-});
-
-Route::get('/vie-a-dakar', function () {
-    return view('vie_dakar'); // à créer
-});
-
-Route::get('/contact', function () {
-    return view('contact'); // à créer
-});
-Route::get('/bureau', function () {
-    return view('bureau'); // à créer
-});
+Route::resource('activities', ActivityController::class)->only(['index', 'show']); // Si public peut seulement voir
 
 
-Route::resource('activities', ActivityController::class);
+// ----------------------
+// 🔐 AUTHENTIFICATION ADMIN
+// ----------------------
+
+Route::get('/admin/login', [AuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AuthController::class, 'login']);
+Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+
+// ----------------------
+// 🛡️ ZONE ADMIN PROTÉGÉE
+// ----------------------
+
+Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Gestion des activités
+    Route::resource('activities', AdminActivityController::class);
+});

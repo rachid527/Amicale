@@ -37,7 +37,7 @@
     <blockquote style="font-style: italic; background: #f9f9f9; padding: 1rem; border-left: 5px solid #900C3F;">
         “Nous croyons en la force de notre communauté. En tant qu’étudiants burkinabè à l’ESMT, nous sommes plus forts ensemble. Notre amicale est notre maison, notre repère, notre fierté.”
     </blockquote>
-</section>
+</section>  
 
 <section style="margin-top: 3rem;">
     <h2>🤝 Notre lien avec la FEFAS 🇧🇫</h2>
@@ -70,11 +70,11 @@
     <h2>🔗 Découvrir d’autres sections du site</h2>
 
     <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 1rem;">
-        <a href="{{ url('/activites') }}" class="button" style="min-width: 200px; text-align: center;">📅 Activités organisées</a>
+        <a href="{{ url('/activities') }}" class="button" style="min-width: 200px; text-align: center;">📅 Activités organisées</a>
         <a href="{{ url('/bureau') }}" class="button" style="min-width: 200px; text-align: center;">👥 Bureau actuel</a>
         <a href="{{ url('/anciens') }}" class="button" style="min-width: 200px; text-align: center;">🎓 Nos anciens</a>
         <a href="{{ url('/vie-a-dakar') }}" class="button" style="min-width: 200px; text-align: center;">🌍 Vie à Dakar</a>
         <a href="{{ url('/contact') }}" class="button" style="min-width: 200px; text-align: center;">📬 Contact</a>
     </div>
 </section>
-@endsection
+@endsection  

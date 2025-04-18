@@ -20,9 +20,12 @@ class ActivityFactory extends Factory
             'titre' => fake()->sentence(1, true),
             'date' =>  now(),
             'prix' => fake()->randomFloat(0, 1000, 50000),
+            'statut' => fake()->word(),
             'description' => fake()->paragraph(30, true),
             // Image factice (chemin simulé)
             'image_path' => 'storage/activites/',
+            // 'image_path' => fake()->imageUrl($width = 640, $height = 480),
+
             // Vidéo factice (chemin vers une vidéo générique)
             'video_path' => 'storage/activites/video'
         ];
